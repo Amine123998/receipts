@@ -1,0 +1,39 @@
+{{> header}}
+  <div class="row row-cols-1 row-cols-sm-2">
+    <div class="col">
+    <h1>{{title}}</h1>
+    {{#authenticated}}
+    <p>
+    <a class="btn btn-primary" href="/update/{{id}}">Modifier</a>
+    <a class="btn btn-primary" href="/delete/{{id}}">Supprimer</a>
+    </p>
+    {{/authenticated}}
+
+    <p>{{description}}</p>
+    <p>Durée : {{duration}}</p>
+    </div>
+    <div class="col">
+    <img class="img-fluid" src="{{img}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    Ingrédients :
+    <ul>
+      {{#ingredients}}
+        <li>{{name}}</li>
+      {{/ingredients}}
+    </ul>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col">
+    Étapes :
+    <ol>
+      {{#stages}}
+        <li>{{description}}</li>
+      {{/stages}}
+    </ol>
+    </div>
+  </div>
+{{> footer}}
